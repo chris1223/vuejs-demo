@@ -6,15 +6,16 @@
 
 <body>
     <div id="app">
-        <select v-model="city">
-            <option disabled value="">選取城市</option>
+        <select v-model="cities" multiple>
             <option >台北</option>
             <option >台中</option>
             <option >高雄</option>
+            <option >嘉義</option>
+            <option >雲林</option>
         </select>
 
         <p>
-            <strong>你選了 :</strong>{{city}}
+            <strong>你選了 :</strong>{{cities}}
         </p>
     </div>
     <script src="https://vuejs.org/js/vue.js"></script>
@@ -22,7 +23,7 @@
         var app = new Vue({
             el: '#app',
             data: {
-                city:''
+                cities:''
             },
         });
     </script>
