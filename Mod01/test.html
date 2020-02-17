@@ -3,25 +3,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .error {
-            color: red;
-            border: red 2px solid;
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 2s;;
         }
 
-        .data-valid {
-            color: green;
-            border: green 2px solid;
+        .fade-enter,
+        .fade-leave {
+            opacity: 0;
         }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <input type="text" v-model="myData" 
-        v-bind:class="{error:isError,'data-valid':!isError}">
-        <div>
-            {{msg}}
-        </div>
+       <button v-on:click="show = !show">click</button>
+       <transation></transation>
     </div>
     <script src="https://vuejs.org/js/vue.js"></script>
     <script>
