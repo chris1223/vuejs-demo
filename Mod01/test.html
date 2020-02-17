@@ -6,13 +6,9 @@
 
 <body>
     <div id="app">
-        <button @click="plusNum(step,$event)">
-            Add To Cart
-        </button>
-
-        <p>
-            <strong>num :</strong>{{num}}
-        </p>
+        <a href="http://vuejs.org" @click="showMsg" target="_blank">
+            Go To Vue.js
+        </a>
     </div>
     <script src="https://vuejs.org/js/vue.js"></script>
     <script>
@@ -28,7 +24,11 @@
                     console.log(event.target);
                     console.log(event.type);
                     this.num += val;
+                },
+                showMsg:function(event){
+                    alert("Not Redirect");
                 }
+
             }
         });
     </script>
