@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <select v-model="city">
+            <option disabled value="">選取城市</option>
+            <option >台北</option>
+            <option >台中</option>
+            <option >高雄</option>
+        </select>
+
+        <p>
+            <strong>你選了 :</strong>{{city}}
+        </p>
+
+    </div>
+
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                city: ''
+            }
+        });
+    </script>
+</body>
+
+</html>
