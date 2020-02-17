@@ -1,27 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 
 <body>
+
     <div id="app">
-        <template v-for="(option,index) in genderOption">
-            <input type="radio" v-model="gender" :value="option.value" :id="option.value+index">
+        <template v-for="(option,index) in genderOptions">
+            <input type="radio" 
+            v-model="gender" 
+            v-bind:value="option.value"
+            v-bind:id="option.value">
             <label v-bind:for="option.value">{{option.label}}</label>
         </template>
 
         <p>
-            <strong>gender:</strong>{{gender}}
+            <strong>gender :</strong>{{gender}}
         </p>
+
     </div>
+
     <script src="https://vuejs.org/js/vue.js"></script>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
                 gender: '',
-                genderOption: [
+                genderOptions: [
                     {
                         label: 'Male',
                         value: 'male'
@@ -31,7 +41,7 @@
                         value: 'female'
                     }
                 ]
-            },
+            }
         });
     </script>
 </body>

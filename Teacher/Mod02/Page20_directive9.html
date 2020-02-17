@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <input v-model="input.input1" placeholder="Enter data">
+        <p><strong>Number : </strong>{{input.input1}}</p>
+        <p><strong>Type : </strong>{{typeof input.input1}}</p>
+        
+        <br>
+        <input v-model.number="input.input2" placeholder="Enter data">
+        <p><strong>Number : </strong>{{input.input2}}</p>
+        <p><strong>Type : </strong>{{typeof input.input2}}</p>
+      
+    </div>
+
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                input:{
+                    input1:"",
+                    input2:""
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

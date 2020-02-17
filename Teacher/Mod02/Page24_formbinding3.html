@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="checkbox" v-model="userlist" id="user1" value="Marya">
+        <label for="user1">Mary</label>
+        <input type="checkbox" v-model="userlist" id="user2" value="Candy">
+        <label for="user2">Candy</label>
+        <input type="checkbox" v-model="userlist" id="user3" value="Lulu">
+        <label for="user3">Lulu</label>
+        <input type="checkbox" v-model="userlist" id="user4" value="Mandy">
+        <label for="user4">Mandy</label>
+        <p>
+            <strong>User List :</strong>{{userlist}}
+        </p>
+      
+    </div>
+
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                userlist:[]
+            }
+        });
+    </script>
+</body>
+
+</html>
