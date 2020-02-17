@@ -6,13 +6,15 @@
 
 <body>
     <div id="app">
-        <template v-for="(option,index) in genderOption">
-            <input type="radio" v-model="gender" :value="option.value" :id="option.value+index">
-            <label v-bind:for="option.value">{{option.label}}</label>
-        </template>
+        <select v-model="city">
+            <option disabled value="">選取城市</option>
+            <option >台北</option>
+            <option >台中</option>
+            <option >高雄</option>
+        </select>
 
         <p>
-            <strong>gender:</strong>{{gender}}
+            <strong>你選了 :</strong>{{city}}
         </p>
     </div>
     <script src="https://vuejs.org/js/vue.js"></script>
@@ -20,17 +22,7 @@
         var app = new Vue({
             el: '#app',
             data: {
-                gender: '',
-                genderOption: [
-                    {
-                        label: 'Male',
-                        value: 'male'
-                    },
-                    {
-                        label: 'Female',
-                        value: 'female'
-                    }
-                ]
+                city:''
             },
         });
     </script>
