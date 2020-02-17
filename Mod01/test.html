@@ -6,7 +6,7 @@
 
 <body>
     <div id="app">
-        <span v-text="msg + new Date().toLocaleString('zh-TW')"></span>
+        <span v-text="new Date().getHours() < 12 ?'早安' :'今天好'"></span>
     </div>
     <script src="https://vuejs.org/js/vue.js"></script>
     <script>
