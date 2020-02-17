@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- v-model.number => 自動將binding的資料轉型成數字(預設是字串)) -->
+        <input type="text" v-model.number="mydata"> 
+        <p>
+            {{msg}}
+        </p>
+
+
+    </div>
+
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                mydata: null,
+                msg: ''
+            },
+            watch: {
+                mydata: function (value) {
+                    console.log(value);
+                    console.log(this.IsInRole(value));
+                    if(this.IsInRole(value)){
+                        this.msg = "data is valid";
+                    }
+                    else
+                    {
+                        this.msg = "data is invalid";
+                    }
+                }
+            },
+            methods: {
+                IsInRole: function (number) {
+                    return number > 0 && number <= 100;
+                }
+
+            }
+        });
+    </script>
+</body>
+
+</html>
