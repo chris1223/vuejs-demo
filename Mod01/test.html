@@ -9,7 +9,7 @@
 
 <body>
     <div id="app">
-        {{ msg }}
+        {{ sayhello( "ABC") }}
     </div>
     <script src="https://vuejs.org/js/vue.js"></script>
     <script>        
@@ -17,6 +17,11 @@
             el: '#app',
             data: {
                 msg: 'hello world !'
+            },
+            methods:{
+                sayhello: function (name) {
+                    return this.msg + name;
+                }
             }
         });
     </script>
