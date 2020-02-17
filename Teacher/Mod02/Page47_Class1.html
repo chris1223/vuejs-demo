@@ -1,52 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .error {
-            color: red;
-            border: red 2px solid;
-        }
-
-        .data-valid {
-            color: green;
-            border: green 2px solid;
+        .error{
+            color:red;
+            border:red 1px solid;
         }
     </style>
 </head>
 
 <body>
+
     <div id="app">
-        <input type="text" v-model="myData" 
-        v-bind:class="{error:isError,'data-valid':!isError}">
+        <input type="text" v-model="mydata" v-bind:class="{error:isError}">
         <div>
             {{msg}}
         </div>
     </div>
+
     <script src="https://vuejs.org/js/vue.js"></script>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                msg: 'Hello World ! ',
-                myData: '',
-                isError: null
+                msg:"",
+                mydata:"",
+                isError:null 
             },
-            watch: {
-                myData: function () {
+            watch:{
+                mydata:function () {
                     var isNumber = /^\d+$/;
-                    var isNotEmpty = /\S+/;
-                    var s = this.myData;
-                    if (isNumber.test(s) && isNotEmpty.test(s)) {
+                    var isNotEmpty=/\S+/;
+                    var s = this.mydata;
+                    if(!isNumber.test(s) && isNotEmpty.test(s)){
                         this.isError = true;
                         this.msg = "data is invalid";
-                    } else {
+                    }
+                    else
+                    {
                         this.isError = false;
                         this.msg = "data is valid";
                     }
                 }
             }
-
         });
     </script>
 </body>
