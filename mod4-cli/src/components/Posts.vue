@@ -3,9 +3,20 @@
     <h3>Posts</h3>
     <b-list-group>
       <b-list-group-item v-for="p in getAllPosts" v-bind:key="p.id">
-        <strong>User Id :</strong>{{p.userId}}<br/>
-        <strong>Title :</strong>{{p.title}}<br/>
-        <strong>Body :</strong>{{p.body}}<br/>
+        <strong>User Id :</strong>
+        {{p.userId}}
+        <br />
+        <strong>Title :</strong>
+        {{p.title}}
+        <br />
+        <strong>Body :</strong>
+        {{p.body}}
+        <br />
+        <div class="mt-3">
+          <b-button-group size="sm">
+            <b-button @click="removePostAction(p.id)" variant="danger">delete</b-button>
+          </b-button-group>
+        </div>
       </b-list-group-item>
     </b-list-group>
   </div>
@@ -20,7 +31,7 @@ export default {
     ...mapGetters(["getAllPosts"])
   },
   methods: {
-    ...mapActions(["getPostsAction"])
+    ...mapActions(["getPostsAction","removePostAction"])
   },
   created() {
     this.getPostsAction();
