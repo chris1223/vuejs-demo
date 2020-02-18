@@ -6,14 +6,14 @@
 
 <body>
     <div id="app">
-       <welcome-component user-name="mary"></welcome-component>
-       <welcome-component user-name="candy"></welcome-component>
+       <welcome-component user-name="mary"  message="Hello"></welcome-component>
+       <welcome-component user-name="candy" message="Hi"></welcome-component>
     </div>
     <script src="https://vuejs.org/js/vue.js"></script>
     <script>
         let welcom = {
-            template:"<h1>Hello {{userName}}</h1>",
-            props:['userName']
+            template:"<h1>{{message}} {{userName}}</h1>",
+            props:['userName','message']
         };
         var app = new Vue({
             el: '#app',
