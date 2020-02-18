@@ -18,7 +18,7 @@ export default {
     };
   },
   components: {
-    'welcome-component': Welcome
+    'welcome-component' : Welcome
   },
   methods: {
     onsayhello: function(txt) {
