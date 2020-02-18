@@ -1,26 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
 <body>
     <div id="app">
-       <welcome-component></welcome-component>
-       <welcome-component></welcome-component>
+        <welcome-component></welcome-component>
+        <WelcomeComponent></WelcomeComponent>
     </div>
+
     <script src="https://vuejs.org/js/vue.js"></script>
     <script>
-        let welcom = {
+        let welcome={
             template:"<h1>Hello</h1>"
         };
+        
         var app = new Vue({
-            el: '#app',
+            el:"#app",
             components:{
-                "welcome-component":welcom
+                "WelcomeComponent":welcome
             }
         });
     </script>
-</body>
 
+</body>
 </html>
