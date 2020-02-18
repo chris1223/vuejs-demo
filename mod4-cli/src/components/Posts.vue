@@ -14,7 +14,8 @@
         <br />
         <div class="mt-3">
           <b-button-group size="sm">
-            <b-button @click="removePostAction(p.id)" variant="danger">delete</b-button>
+            <b-button variant="primary" @click="removePostAction(p.id)">Delete</b-button>
+            <b-button variant="info" :to="`/edit/${p.id}`">Edit</b-button>
           </b-button-group>
         </div>
       </b-list-group-item>
@@ -31,10 +32,12 @@ export default {
     ...mapGetters(["getAllPosts"])
   },
   methods: {
-    ...mapActions(["getPostsAction","removePostAction"])
+    ...mapActions(["getPostsAction" , "removePostAction"])
   },
   created() {
-    this.getPostsAction();
+    if (this.getAllPosts.length <= 0) {
+      this.getPostsAction();
+    }
   }
 };
 </script>

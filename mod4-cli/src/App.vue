@@ -1,25 +1,27 @@
 <template>
   <div class="container" id="app">
-    <div class="heading">
-      <h1>Posts App</h1>
-      <h6>Sessing all posts.</h6>
-    </div>
-    <hr/>
-    <AddPost/>
-    <hr/>
-    <posts />
+    <b-nav tabs fill id="nav">
+      <b-nav-item id="navhome" @click="isActive=true" to="/" :active="isActive">
+        Home
+      </b-nav-item>
+      <b-nav-item id="navabout" @click="isActive=false" to="/About" :active="!isActive">
+        About
+      </b-nav-item>
+    </b-nav>
+    <b-container>
+      <router-view></router-view>
+    </b-container>
   </div>
 </template>
 
 <script>
-import Posts from "./components/Posts.vue";
-import AddPost from "./components/AddPost.vue";
 
 export default {
   name: "app",
-  components: {
-    Posts,
-    AddPost
+  data(){
+    return {
+      isActive:true
+    }
   }
 };
 </script>
