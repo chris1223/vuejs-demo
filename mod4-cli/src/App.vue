@@ -4,17 +4,22 @@
       <h1>Posts App</h1>
       <h6>Sessing all posts.</h6>
     </div>
+    <hr/>
+    <AddPost/>
+    <hr/>
     <posts />
   </div>
 </template>
 
 <script>
 import Posts from "./components/Posts.vue";
+import AddPost from "./components/AddPost.vue";
 
 export default {
   name: "app",
   components: {
-    Posts
+    Posts,
+    AddPost
   }
 };
 </script>
