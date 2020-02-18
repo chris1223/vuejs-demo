@@ -6,8 +6,7 @@
 
 <body>
     <div id="app">
-        <welcome-component v-bind:user-name="name"></welcome-component>
-        <welcome-component :user-name="name"></welcome-component>
+        <welcome-component v-bind:user-name="name" v-on:sayhello="onsayhello"></welcome-component>
     </div>
     <script src="https://vuejs.org/js/vue.js"></script>
     <script>
@@ -16,6 +15,9 @@
                 `<div>
                 <label>{{labelText}}</label>
                 <input type="text" v-model="inputText">
+                <button v-on:click="$emit('sayhello',inputText)">
+                    say Hello
+                </button>
             </div>`,
             props: ['userName'],
             data: function () {
@@ -32,6 +34,11 @@
             },
             components: {
                 "welcome-component": welcom
+            },
+            methods:{
+                onsayhello:function(txt){
+                    console.log(txt);
+                }
             }
         });
     </script>
